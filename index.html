@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <h1>To Do List</h1>
+    </header>
+    <main>
+      <div class="checklist">
+        <ul id="checklist-items">
+          <!-- Checklist items will be rendered here -->
+        </ul>
+      </div>
+      <form id="new-item-form">
+        <input type="text" id="new-item-input" placeholder="Type a task and hit Enter..." autofocus />
+      </form>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

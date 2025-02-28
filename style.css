@@ -1,0 +1,182 @@
+/* Reset basic elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global font and basic styling */
+html, body {
+  font-family: 'Ericsson Hilda', sans-serif;
+}
+
+/* Body: Slight yellow background with repeating notebook lines */
+body {
+  margin: 0;
+  padding: 20px;
+  text-align: right;
+  background-color: #ffff8f;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff7e8 0px,
+    #fff7e8 39px,
+    #ffebb5 39px,
+    #ffebb5 40px
+  );
+  color: #333;
+}
+
+/* Container: Semi-transparent white background for readability */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling with logo */
+header {
+  position: relative;
+  background: #4285f4;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+header h1 {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin: 0;
+}
+header .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+  width: auto;
+}
+
+/* Main content area */
+main {
+  padding: 20px;
+}
+
+/* Checklist container */
+.checklist {
+  margin-bottom: 20px;
+}
+#checklist-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each checklist item */
+#checklist-items li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Normal display: right aligned */
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+#checklist-items li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#checklist-items li:last-child {
+  border-bottom: none;
+}
+
+/* When editing, force item to align left */
+#checklist-items li.editing {
+  justify-content: flex-start;
+}
+
+/* Checkbox styling */
+#checklist-items input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-left: 10px;
+  margin-right: 12px;
+}
+
+/* Task text styling in display mode */
+#checklist-items span {
+  margin-right: auto; /* Pushes the text left within the flex container */
+  font-size: 1.1em;
+  text-align: right;  /* Right aligned in display mode */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Editable input styling */
+.editable-input {
+  font-size: 1.1em;
+  padding: 2px;
+  border: 1px dashed #ccc;       /* Subtle gray dashed border */
+  background-color: #f0faff;      /* Light background */
+  text-align: left;              /* Left align for editing */
+  margin: 0;
+  width: 100%;                   /* Fill the available width */
+  box-sizing: border-box;
+  
+  /* Remove native appearance */
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  
+  /* Remove default outline */
+  outline: none !important;
+}
+
+/* Custom focus style for the editable input */
+.editable-input:focus,
+.editable-input:focus-visible {
+  outline: none !important;
+  border-color: #bbb;            /* Subtle border color change */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15); /* Very soft shadow as an indicator */
+}
+
+/* Firefox-specific focus override */
+.editable-input::-moz-focus-inner {
+  border: 0 !important;
+}
+
+/* Checked tasks: strikethrough effect */
+#checklist-items span.checked {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Remove button styling */
+#checklist-items button {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+#checklist-items button:hover {
+  transform: scale(1.1);
+}
+
+/* New task input form styling */
+#new-item-form {
+  margin-top: 10px;
+}
+#new-item-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  text-align: right;
+  transition: border-color 0.3s;
+}
+#new-item-input:focus {
+  outline: none;
+  border-color: #4285f4;
+}
